@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" charset="utf-8">
+		<title>我的球局</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.mui-input-row label {
+			height: 40px;
+		}
+		#name {
+			background-color: #fff;
+		}
+		.mui-content {
+			margin-top: -80px;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="top-right" class=" mui-pull-right" ></a>
+			<a id="top-left" class="mui-action-back mui-icon mui-icon-back mui-pull-left" onclick="history.go(-1)"></a>
+			<h1 class="mui-title">我的球局</h1>
+		</header>
+
+
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		 //mui初始化
+		 mui.init({
+    subpages:[{
+      url:'follow-game-subpage.html',
+      id:'follow-game-subpage',
+      styles:{
+        top:'45px',//mui标题栏默认高度为45px；
+        bottom:'0px'//默认为0px，可不定义；
+      }
+    }]
+  });
+	</script>
+
+</html>

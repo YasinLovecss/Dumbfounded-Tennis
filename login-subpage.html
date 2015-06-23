@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>登录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<style type="text/css">
+			span{
+				background-color:#EFEFF4 ;
+				color: #9C9C9C;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<form>
+				<input type="text" class="mui-input-clear" name="phone" id="phone" placeholder="用户名" />
+				<input type="password" class="mui-input-clear" name="password" id="password" placeholder="密码" />
+				<input class="submit" type="submit" value="登录" onclick="checkreg();return false;" />
+			</form>
+			<div id="alert" style="text-align: center;font-size:15px;color: red;"></div>
+		</div>
+		<footer>
+			<span id="register">注册</span>
+			<span id="forget">忘记密码？</span>
+		</footer>
+		<script>
+			function checkreg() {
+				var phone = document.getElementById("phone").value;
+				var password = document.getElementById("password").value;
+				if (phone == "" || phone == null) {
+					mui.toast("请填写用户名！");
+					return false;
+				} else if (password == "") {
+					mui.toast("请填写密码！");
+					return false;
+				} else {
+					login();
+				}
+			}
+
+			function login() {
+				mui.toast("登陆中，请稍候");
+				var phone = document.getElementById("phone").value;
+				var password = document.getElementById("password").value;
+				var jsonobj = {
+					"phone": phone,
+					"password": password
+				};
+				var str = jsonobj;
+				var url = surl + "user/login";
+				mui.ajax(url, {
+					data: str,
+					dataType: 'json',
+					type: 'post',
+					timeout: 10000,
+					success: function(data) {
+						if (data.state == "false") {
+							mui.toast("用户名或密码失败。");
+							return false;
+						} else {
+							//							localStorage.tempClass = data.classId;
+							//							localStorage.tempGrade = data.grade;
+							loginok();
+						}
+					},
+					error: function(XMLHttpRequest, xmlhttp, errorThrown, data) {
+						mui.toast("网络连接错误");
+						console.log("XMLHttpRequest.readyState.login:" + XMLHttpRequest.readyState);
+						console.log("XMLHttpRequest.status:" + XMLHttpRequest.status);
+						return false;
+					}
+				});
+			}
+
+			function tempsave() {
+				localStorage.tempuser = document.getElementById("phone").value;
+			}
+
+			function loginok() {
+				location.href = "changePassword.html";
+				mui.toast("登陆成功");
+				tempsave();
+				mui.back();
+			}
+
+			function location() {
+				var register = document.getElementById("register");
+				var forget = document.getElementById("forget");
+				register.addEventListener("tap", function() {
+					mui.openWindow({
+						url: "register.html",
+						id: "register",
+						styles: {},
+						extras: {},
+						crateNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+						show: {
+							autoShow: true, //页面loaded事件发生后自动显示，默认为true
+							aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；
+							duration: "200" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+						}
+					})
+				})
+                forget.addEventListener('tap',function() {
+                	mui.openWindow({
+						url: "forgetPassword.html",
+						id: "forgetPassword",
+						styles: {},
+						extras: {},
+						crateNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+						show: {
+							autoShow: true, //页面loaded事件发生后自动显示，默认为true
+							aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；
+							duration: "200" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+						}
+					})
+                })			
+			}
+			
+			location();
+		</script>
+	</body>
+
+</html>

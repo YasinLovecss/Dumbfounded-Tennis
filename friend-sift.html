@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		<style>
+			html,body {
+				background-color: #efeff4;
+			}
+			.title{
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			span{
+				background-color: inherit;
+				color:#44BDED ;
+			}
+			.mui-bar{
+				padding-left: 0;
+				padding-right:0;
+			}
+			#top-left{
+				width: 15%;
+				text-align: left;
+				text-indent: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="top-right" class="mui-pull-right">确定</a>
+			<a id="top-left" class="mui-pull-left">取消</a>
+			<h1 id="title" class="mui-title">筛选</h1>
+		</header>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		 mui.init({
+    subpages:[{
+      url:'friend-sift-subpage.html',
+      id:'friend-sift-subpage',
+      styles:{
+        top:'50px',//mui标题栏默认高度为45px；
+        bottom:'0'//默认为0px，可不定义；
+      }
+    }]
+  });
+	</script>
+</html>

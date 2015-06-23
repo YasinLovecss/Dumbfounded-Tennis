@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" charset="utf-8">
+		<title>详细资料</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+		</script>
+	</head>
+	<style type="text/css">
+		.mui-input-row label {
+			height: 40px;
+		}
+		#name {
+			background-color: #fff;
+		}
+		.mui-content {
+			margin-top: -80px;
+		}
+		.headimg{
+	width: 20%;
+	height: 80px;
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	margin:100px 40%  20px;
+}
+.headimg img{
+	width: 100%;
+	height: 100%;
+}
+	</style>
+
+	<body>
+		<div class="mui-content">
+			<div class="headimg">
+				<img src="img/head2.jpg" />
+			</div>
+			<div class="mui-input-row" >
+				<label>昵称</label>
+				<input id="nickname" name="nickname" type="text" placeholder="点击输入昵称">
+			</div>
+			<div class="mui-input-row">
+				<label>微信号</label>
+				<input id="weichat" name="weichat" type="text" placeholder="点击微信号，选填">
+			</div>
+			<div class="mui-input-row" >
+				<label class="birthday">生日</label>
+				<div id="pickDateBtn">
+					点击选择生日
+				</div>
+			</div>
+			<div class="mui-input-row" >
+				<label class="tennisAge">球龄</label>
+				<div id="pickTennisAge">
+					点击选择球龄
+				</div>
+			</div>
+			<div class="mui-input-row" >
+				<label class="level">水平等级</label>
+				<div id="picklevel">
+					点击选择等级     
+				</div>
+			</div>
+			<div class="mui-form-row">
+				<label class="sex">性别</label>
+				<button id="sex-man" class="mui-btn">男</button>
+				<button id="sex-woman" class="mui-btn">女</button>
+			</div>
+			<div class="mui-form-row">
+				<label class="issecret">手机号</label>
+				<button id="isPublic" class="mui-btn">公开</button>
+				<button id="isSecret" class="mui-btn">保密</button>
+			</div>
+			<div class="mui-input-row" style="margin: 10px 5px;">
+				<textarea id="textarea" rows="3" placeholder="个人简介"></textarea>
+			</div>
+		</div>
+
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		 //mui初始化
+		window.sex = "男";
+		window.is_secret = "公开";
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+		 //			var info = document.getElementById("info");
+		var pickDate = document.getElementById("pickDateBtn");
+		document.getElementById("pickDateBtn").addEventListener('tap', function() {
+				var dDate = new Date();
+				dDate.setFullYear(1990, 7, 18);
+				var minDate = new Date();
+				minDate.setFullYear(1960, 0, 1);
+				var maxDate = new Date();
+				maxDate.setFullYear(2016, 11, 31);
+				plus.nativeUI.pickDate(function(e) {
+					var d = e.date;
+					pickDate.innerText = d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
+				}, function(e) {
+					pickDate.innerText = "您没有选择日期";
+				}, {
+					title: "请选择日期",
+					date: dDate,
+					minDate: minDate,
+					maxDate: maxDate
+				});
+			})
+			//			 document.getElementById("pickTimeBtn").addEventListener('tap', function() {
+			//				var dTime = new Date();
+			//				dTime.setHours(6, 0);
+			//				plus.nativeUI.pickTime(function(e) {
+			//					var d = e.date;
+			//					info.innerText = "您选择的时间是：" + d.getHours() + ":" + d.getMinutes();
+			//				}, function(e) {
+			//					info.innerText = "您没有选择时间"
+			//				}, {
+			//					title: "请选择时间",
+			//					is24Hour: true,
+			//					time: dTime
+			//				});
+			//			});
+			
+var picklevel = document.getElementById("picklevel");
+var picktennisage = document.getElementById("pickTennisAge");
+picklevel.addEventListener('tap',chooseLevel);
+picktennisage.addEventListener('tap',choosetennisage);
+
+        function choosetennisage() {
+			// 弹出系统选择按钮框
+			plus.nativeUI.actionSheet({
+				cancel: "取消",
+				buttons: [{
+					title: "<1年"
+				}, {
+					title: "1-2年"
+				},
+				{title: "2-3年"
+			},
+			{title: "3-4年"
+			},
+			{title: "4-5年"
+			},
+			{title: "5-6年"
+			},
+			{title: "6-7年"
+			},
+			{title: ">7年"
+			}]
+		},
+		function(e) {
+			//		console.log( "User pressed: "+e.index );
+			switch (e.index){
+				case 1:
+				window.tennisage = "<1年";
+				break;
+				case 2:
+				window.tennisage = "1-2年";
+				break;
+				case 3:
+				window.tennisage = "2-3年"
+				break;
+				case 4:
+				window.tennisage = "3-4年"
+				break;
+				case 5:
+				window.tennisage = "4-5年"
+				break;
+				default:
+				break;
+			}
+			picktennisage.innerHTML = tennisage;
+		});
+		}
+        
+		function chooseLevel() {
+			// 弹出系统选择按钮框
+			plus.nativeUI.actionSheet({
+//				title: "请选择球龄",
+				cancel: "取消",
+				buttons: [{
+					title: "1.0"
+				}, {
+					title: "2.0"
+				},
+				{title: "3.0"
+			},
+			{title: "4.0"
+			},
+			{title: "5.0"
+			}]
+		},
+		function(e) {
+			//		console.log( "User pressed: "+e.index );
+			switch (e.index){
+				case 1:
+				window.level = "1.0";
+				break;
+				case 2:
+				window.level = "2.0";
+				break;
+				case 3:
+				window.level = "3.0"
+				break;
+				case 4:
+				window.level = "4.0"
+				break;
+				case 5:
+				window.level = "5.0"
+				break;
+				default:
+				break;
+			}
+			picklevel.innerHTML = level;
+		});
+		}
+		
+			
+		
+		
+		
+		
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+		var man = document.getElementById("sex-man");
+		var woman = document.getElementById("sex-woman");
+		var isPublic = document.getElementById("isPublic");
+		var isSecret = document.getElementById("isSecret");
+		man.addEventListener('tap', function() {
+			man.style.backgroundColor = "#1DAC34";
+			man.style.borderColor = "#1DAC34";
+			man.style.color = "#fff";
+			woman.style.borderColor = "lightgrey";
+			woman.style.color = "#000000";
+			woman.style.backgroundColor = "#fff";
+			window.sex = "男";
+		})
+		 woman.addEventListener('tap', function() {
+			woman.style.backgroundColor = "#1DAC34";
+			woman.style.borderColor = "#1DAC34";
+			woman.style.color = "#fff";
+			man.style.borderColor = "lightgrey";
+			man.style.color = "#000000";
+			man.style.backgroundColor = "#fff";
+			window.sex = "女";
+		})
+		 isPublic.addEventListener('tap', function() {
+			isPublic.style.backgroundColor = "#1DAC34";
+			isPublic.style.borderColor = "#1DAC34";
+			isPublic.style.color = "#fff";
+			isSecret.style.borderColor = "lightgrey";
+			isSecret.style.color = "#000000";
+			isSecret.style.backgroundColor = "#fff";
+			window.is_secret = "公开";
+		})
+		 isSecret.addEventListener('tap', function() {
+			isSecret.style.backgroundColor = "#1DAC34";
+			isSecret.style.borderColor = "#1DAC34";
+			isSecret.style.color = "#fff";
+			isPublic.style.borderColor = "lightgrey";
+			isPublic.style.color = "#000000";
+			isPublic.style.backgroundColor = "#fff";
+			window.is_secret = "保密";
+		})
+//		 document.getElementById("submit").addEventListener('tap', function() {
+//			var nickname = document.getElementById("nickname").value;
+//			var weichat = document.getElementById("weichat").value;
+//			var birth = document.getElementById("pickDateBtn").innerText;
+//			var tennisAge = document.getElementById("tennisAge").innerText;
+//			var level = document.getElementById("picklevel").innerText;
+//			var introduce = document.getElementById("textarea").value;
+//			var jsonobj = {
+//				"nickname": nickname,
+//				"weichat": weichat,
+//				"birth": birth,
+//				"tennisAge": tennisAge,
+//				"level": level,
+//				"introduce": introduce,
+//				"sex": sex,
+//				"is_secret": is_secret
+//			};
+//			var str = jsonobj;
+//			var url = surl + "user/modifyInfo";
+//			mui.ajax(url, {
+//				data: str,
+//				dataType: 'json',
+//				type: 'post',
+//				timeout: 100000,
+//				success: function(data) {
+//					//						if (data.state == "false") {
+//					//							return false;
+//					//						} 
+//					//						else {
+//					////							
+//					//////							localStorage.tempClass = data.classId;
+//					//////							localStorage.tempGrade = data.grade;
+//					////							loginok();
+//					////						}
+//				},
+//				error: function(XMLHttpRequest, xmlhttp, errorThrown, data) {
+//					mui.toast("网络连接错误");
+//					console.log("XMLHttpRequest.readyState.login:" + XMLHttpRequest.readyState);
+//					console.log("XMLHttpRequest.status:" + XMLHttpRequest.status);
+//					return false;
+//				}
+//			});
+//		})
+//	
+	</script>
+
+</html>

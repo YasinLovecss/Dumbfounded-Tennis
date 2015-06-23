@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>我</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<span id="title">
+				我
+			</span>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="userInfo">
+					<a class="mui-navigate-right">
+						<div class="headimg">
+							<img src="img/head2.jpg" />
+						</div>
+						<div class="userInfo">
+							<div class="username">
+								张三
+							</div>
+							<div class="userdetail">
+								<span id="sex-age">
+									♂ 27
+								</span>
+								<span id="tennis-age">
+									3个月
+								</span>
+								<span id="level">
+									1.0
+								</span>
+							</div>
+							<div class="userbrief">
+								喜欢网球不解释
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 25px;">
+				<li class="mui-table-view-cell" id="myFollow">
+					<a class="mui-navigate-right">
+						我的关注
+					</a>
+				</li>
+				<li class="mui-table-view-cell" id="followGame">
+					<a class="mui-navigate-right">
+						我的球局
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						我的培训
+					</a>
+				</li>
+
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 25px;" id="changePwd">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						修改密码
+					</a>
+				</li>
+			</ul>
+
+			<ul class="mui-table-view" style="margin-top: 25px;">
+				<li class="mui-table-view-cell" id="logout">
+					<a style="text-align: center;color: #FF3B30;">
+						退出登录
+					</a>
+				</li>
+			</ul>
+		</div>
+		</style>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+		var userinfo = document.getElementById("userInfo");
+		userinfo.addEventListener("tap",function () {
+			mui.openWindow({
+			url:"detailInfo.html",
+			id: "detailInfo",
+			styles: {
+			},
+			extras: {
+			},
+			crateNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+			show: {
+				autoShow: true, //页面loaded事件发生后自动显示，默认为true
+				aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；
+				duration:"200" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+			}
+		})
+		})
+		function checkLogout(){
+	// 弹出提示信息对话框
+	plus.nativeUI.confirm( "是否退出当前账号？", function(e){
+		if (e.index==0) {
+			mui.openWindow({
+			url:"login.html",
+			id: "login",
+			styles: {
+			},
+			extras: {
+			},
+			crateNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+			show: {
+				autoShow: true, //页面loaded事件发生后自动显示，默认为true
+				aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；
+				duration:"50" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+			}
+		})
+		} 
+	}, "", ["Yes","No"] );
+}
+		var logout = document.getElementById("logout");
+		logout.addEventListener('tap',checkLogout);
+		function locationMe() {
+			var myfollow = document.getElementById("myFollow");
+			var followgame = document.getElementById("followGame");
+			var changepwd = document.getElementById("changePwd");
+			myfollow.addEventListener('tap',function() {
+				mui.openWindow({
+			url:"my-follow.html",
+			id: "my-follow",
+			styles: {
+			},
+			extras: {
+			},
+			crateNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+			show: {
+				autoShow: true, //页面loaded事件发生后自动显示，默认为true
+				aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；
+				duration:"50" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+			}
+		})
+			})
+			followgame.addEventListener('tap',function() {
+				mui.openWindow({
+			url:"follow-game.html",
+			id: "follow-game",
+			styles: {
+			},
+			extras: {
+			},
+			crateNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+			show: {
+				autoShow: true, //页面loaded事件发生后自动显示，默认为true
+				aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；
+				duration:"50" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+			}
+		})
+			})
+			changepwd.addEventListener('tap',function() {
+				mui.openWindow({
+			url:"changePassword.html",
+			id: "changePassword",
+			styles: {
+			},
+			extras: {
+			},
+			crateNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+			show: {
+				autoShow: true, //页面loaded事件发生后自动显示，默认为true
+				aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；
+				duration:"50" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+			}
+		})
+			})
+		}
+		locationMe();
+
+	</script>
+
+</html>
