@@ -425,3 +425,17 @@ span {
 .boxsh{
 	box-shadow: 0 1px 6px #ccc;
 }
+.ellipsis{
+	display: inline-block;
+	max-width: 65%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.telimg{
+	float: right;
+	margin-right: 0;
+}
+.telimg img{
+	width: 20px;
+}
