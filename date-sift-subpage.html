@@ -133,14 +133,39 @@
 						</li>
 					</ul>
 				</div>
-				<li class="mui-table-view-cell" id="distance">
+				<li class="mui-table-view-cell" id="tennistime">
 					<a class="mui-navigate-right">
-						出现距离
-						<span class="mui-badge" id="distance_sift">不限</span>
+						球局时间
+						<span class="mui-badge" id="tennistime_sift">不限</span>
 					</a>
 				</li>
-				<div class="sift_list distance_sift">
-					<ul class="mui-table-view" id="distance_list">
+				<div class="sift_list tennistime_sift">
+					<ul class="mui-table-view" id="tennistime_list">
+						<li class="mui-table-view-cell">
+							不限
+						</li>
+						<li class="mui-table-view-cell">
+							&lt;1 天
+						</li>
+						<li class="mui-table-view-cell">
+							&lt;3天
+						</li>
+						<li class="mui-table-view-cell">
+							&lt;1周
+						</li>
+						<li class="mui-table-view-cell">
+							&gt;1周
+						</li>
+					</ul>
+				</div>
+				<li class="mui-table-view-cell" id="releasedistance">
+					<a class="mui-navigate-right">
+						发布距离
+						<span class="mui-badge" id="releasedistance_sift">不限</span>
+					</a>
+				</li>
+				<div class="sift_list releasedistance_sift">
+					<ul class="mui-table-view" id="releasedistance_list">
 						<li class="mui-table-view-cell">
 							不限
 						</li>
@@ -161,31 +186,25 @@
 						</li>
 					</ul>
 				</div>
-				<li class="mui-table-view-cell" id="appeartime">
+				<li class="mui-table-view-cell" id="cost">
 					<a class="mui-navigate-right">
-						出现时间
-						<span class="mui-badge" id="appeartime_sift">不限</span>
+						费用
+						<span class="mui-badge" id="cost_sift">不限</span>
 					</a>
 				</li>
-				<div class="sift_list appeartime_sift">
-					<ul class="mui-table-view" id="appeartime_list">
+				<div class="sift_list cost_sift">
+					<ul class="mui-table-view" id="cost_list">
 						<li class="mui-table-view-cell">
 							不限
 						</li>
 						<li class="mui-table-view-cell">
-							&lt;15分钟
+							AA 制
 						</li>
 						<li class="mui-table-view-cell">
-							&lt;1小时
+							我买单
 						</li>
 						<li class="mui-table-view-cell">
-							&lt;5小时
-						</li>
-						<li class="mui-table-view-cell">
-							&lt;1天
-						</li>
-						<li class="mui-table-view-cell">
-							&gt;1天
+							协商
 						</li>
 					</ul>
 				</div>
@@ -220,23 +239,32 @@
 					$('#level1_sift').text(tex);
 					$('.level1_sift').slideToggle(100);
 				})
-				// 出现距离筛选
-				$('#distance').click(function(){
-					$('.distance_sift').slideToggle(100);
+				// 球局时间筛选
+				$('#tennistime').click(function(){
+					$('.tennistime_sift').slideToggle(100);
 				});
-				$('#distance_list').children().click(function() {
+				$('#tennistime_list').children().click(function() {
 					var tex = $(this).text();
-					$('#distance_sift').text(tex);
-					$('.distance_sift').slideToggle(100);
+					$('#tennistime_sift').text(tex);
+					$('.tennistime_sift').slideToggle(100);
+				})
+				// 发布距离筛选
+				$('#releasedistance').click(function(){
+					$('.releasedistance_sift').slideToggle(100);
+				});
+				$('#releasedistance_list').children().click(function() {
+					var tex = $(this).text();
+					$('#releasedistance_sift').text(tex);
+					$('.releasedistance_sift').slideToggle(100);
 				})
 				// 出现时间筛选
-				$('#appeartime').click(function(){
-					$('.appeartime_sift').slideToggle(100);
+				$('#cost').click(function(){
+					$('.cost_sift').slideToggle(100);
 				});
-				$('#appeartime_list').children().click(function() {
+				$('#cost_list').children().click(function() {
 					var tex = $(this).text();
-					$('#appeartime_sift').text(tex);
-					$('.appeartime_sift').slideToggle(100);
+					$('#cost_sift').text(tex);
+					$('.cost_sift').slideToggle(100);
 				})
 			})
 		</script>

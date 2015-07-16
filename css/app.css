@@ -3,11 +3,24 @@
  * 在实际项目开发时，建议为App单独写一个css文件，从而实现项目的自定义皮肤功能；
  * 
  * */
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.css {
+   -webkit-transform: translate3d(0, 0, 0);
+   -moz-transform: translate3d(0, 0, 0);
+   -ms-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+}
+a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0)}
 .mui-android header.mui-bar{
 	display: none;
 }
 .mui-android .mui-bar-nav~.mui-content{
 	padding: 0;
+}
+.grey{
+	color: #9C9C9C;
 }
 * {
 	margin: 0;
@@ -16,6 +29,7 @@
 }
 body{
 	background-color: #efeff4;
+	-webkit-overflow-scrolling: touch;
 }
 header {
 	height: 44px;
@@ -24,9 +38,25 @@ header {
 	background-color: #44BDED;
 	text-align: center;
 }
-header #top-right,
+header>#top-right,
 #top-left {
 	background-color: #44BDED;
+}
+#top-left{
+				position: absolute;
+				width: 15%;
+				margin-left: -50%;
+				z-index: 1;
+			}
+#top-left{
+				position: absolute;
+				width: 15%;
+				margin-right: -50%;
+				z-index: 1;
+			}
+header #top-right img{
+	width: 20px;
+	margin: 10px 3%;
 }
 h1 {
 	background-color: #44BDED;
@@ -43,7 +73,8 @@ h1 {
 	right: 0;
 	width: 20%;
 	text-align: right;
-	padding-right: 5px;
+	z-index: 2;
+	padding-right: 2%;
 }
 a {
 	color: #fff;
@@ -135,7 +166,7 @@ label {
 }
 .userdetail {
 	margin-bottom: 3px;
-	background-color: #fff;
+	/*background-color: #fff;*/
 }
 .userbrief {
 	font-size: 13px;
@@ -143,20 +174,29 @@ label {
 	background-color: #fff;
 }
 .mui-content .userdetail span {
-	font-size: 15px;
-	margin-right: 20px;
-	padding: 0 10px;
+	font-size: 13px;
+	margin-right: 5px;
+	padding: 0 5px;
 	color: #fff;
 	border-radius: 3px;
 }
-#sex-age {
+#sex_age {
 	background-color: #44BDED;
 }
-#tennis-age {
+#tennis_age {
 	background-color: goldenrod;
 }
 #level {
 	background-color: #4CD964;
+}
+#payway{
+	background-color: #95B8ED;
+}
+#train_type{
+	background-color:#0072A7
+}
+#train_way{
+	background-color:#FD2F53
 }
 .mui-input-row {
 	line-height: 40px;
@@ -193,8 +233,8 @@ label {
 }
 #sex-man,
 #isPublic {
-	background-color: #1DAC34;
-	border-color: #1DAC34;
+	background-color: #44BDED;
+	border-color: #44BDED;
 	color: #FFFFFF;
 	border-radius: 5px 0 0 5px;
 }
@@ -216,7 +256,7 @@ label {
 }
 .userInfo .datetime,
 span {
-	background-color: #fff;
+	/*background-color: #fff;*/
 }
 .userInfo .datetime span {
 	color: #9C9C9C;
@@ -264,4 +304,124 @@ span {
 }
 .mui-input-row label{
 	background-color: #fff;
+}
+.mui-table-view-cell .mui-btn{
+	margin: 10px 5px;
+	width: 50px;
+}
+.mui-table-view-cell .mui-btn:nth-child(1){
+	position:static;
+	margin-left: 50px;
+}
+.mui-table-view-cell .mui-btn:nth-child(2){
+	position:static;
+}
+.mui-table-view-cell .mui-btn:nth-child(3){
+	position:static;
+}
+.sift_list{
+	padding-left: 5%;
+	display: none;
+}
+.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+	
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			.oa-contact-avatar img {
+				border-radius: 10px;
+				width: 60px;
+			}
+			.oa-contact-content {
+				width: 100%;
+			}
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			.oa-contact-name{
+				float: left;
+			}
+			.oa-contact-position{
+	            float: right;
+	            margin-right: 5%;
+            }
+            .oa-contact-brief{
+            	white-space: nowrap;
+            	overflow: hidden;
+            	text-overflow: ellipsis;
+            	max-width: 70%;
+            }
+.w1{
+	width: 10%;
+}
+.w2{
+	width: 20%;
+}
+.w3{
+	width: 30%;
+}
+.w4{
+	width: 40%;
+}
+.w5{
+	width: 50%;
+}
+.w6{
+	width: 60%;
+}
+.w7{
+	width: 70%;
+}
+.w8{
+	width: 80%;
+}
+.w9{
+	width: 90%;
+}
+.w10{
+	width: 100%;
+}
+.w10 button{
+	font-size: 18px;
+            	width: 90%;
+            	margin: 10px 5%;
+            	height: 40px;
+            	color: #fff;
+            	border-color: #60CF5F;
+            	background-color: #60CF5F;
+            	border-radius: 5px;
+    }
+.he5{
+	height: 5px;
+}
+.he10{
+    	height: 10px;
+    }
+.he15{
+	height: 15px;
+}
+.he20{
+    	height: 20px;
+    }
+    
+.title1{
+	font-size: 16px;
+	color: #333;
+}
+.black{
+	color: #333;
+}
+.pricecolor{
+	color: #f6be8f;
+}
+.boxsh{
+	box-shadow: 0 1px 6px #ccc;
 }

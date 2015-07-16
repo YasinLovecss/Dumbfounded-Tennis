@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link href="css/mui.imageviewer.css" rel="stylesheet" />
+		<style>
+			html,
+			body {
+				height: 100%;
+				margin: 0px;
+				padding: 0px;
+				overflow: hidden;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+			}
+			.mui-bar{
+				padding-left: 0;
+				padding-right:0;
+			}
+			#top-left{
+				width: 15%;
+				text-align: left;
+				text-indent: 5px;
+			}
+		</style>
+	</head>
+
+	<body contextmenu="return false;">
+		<header class="mui-bar mui-bar-nav">
+			<a id="top-right" class="mui-pull-right"></a>
+			<a id="top-left" class="mui-action-back mui-pull-left">返回</a>
+			<h1 id="title" class="mui-title">刘亦菲</h1>
+		</header>
+	</body>
+<script src="js/mui.min.js"></script>
+	<script>
+		 mui.init({
+    subpages:[{
+      url:'friend-chat-subpage.html',
+      id:'friend-chat-subpage',
+      styles:{
+        top:'45px',//mui标题栏默认高度为45px；
+        bottom:'0'//默认为0px，可不定义；
+      }
+    }]
+  });
+	</script>
+</html>

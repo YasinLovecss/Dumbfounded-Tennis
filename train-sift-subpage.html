@@ -43,6 +43,47 @@
 				</li>
 			</ul>
 			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="type">
+					<a class="mui-navigate-right">
+						培训类型
+						<span class="mui-badge" id="type_sift">不限</span>
+					</a>
+				</li>
+				<div class="sift_list type_sift">
+					<ul class="mui-table-view" id="type_list">
+						<li class="mui-table-view-cell">
+							不限
+						</li>
+						<li class="mui-table-view-cell">
+							主动定制
+						</li>
+						<li class="mui-table-view-cell">
+							被动受教
+						</li>
+					</ul>
+				</div>
+				<li class="mui-table-view-cell" id="way">
+					<a class="mui-navigate-right">
+						授课方式
+						<span class="mui-badge" id="way_sift">不限</span>
+					</a>
+				</li>
+				<div class="sift_list way_sift">
+					<ul class="mui-table-view" id="way_list">
+						<li class="mui-table-view-cell">
+							不限
+						</li>
+						<li class="mui-table-view-cell">
+							私教
+						</li>
+						<li class="mui-table-view-cell">
+							团教
+						</li>
+						<li class="mui-table-view-cell">
+							私+团
+						</li>
+					</ul>
+				</div>
 				<li class="mui-table-view-cell" id="age">
 					<a class="mui-navigate-right">
 						年龄
@@ -193,6 +234,24 @@
 		</div>
 		<script type="text/javascript">
 			$(document).ready(function(){
+				// 培训类型筛选
+				$('#type').click(function(){
+					$('.type_sift').slideToggle(100);
+				});
+				$('#type_list').children().click(function() {
+					var tex = $(this).text();
+					$('#type_sift').text(tex);
+					$('.type_sift').slideUp(100);
+				})
+				// 授课方式筛选
+				$('#way').click(function(){
+					$('.way_sift').slideToggle(100);
+				});
+				$('#way_list').children().click(function() {
+					var tex = $(this).text();
+					$('#way_sift').text(tex);
+					$('.way_sift').slideUp(100);
+				})
 				// 年龄筛选
 				$('#age').click(function(){
 					$('.age_sift').slideToggle(100);
@@ -282,6 +341,7 @@
 				}
 				chooseSex();
 		</script>
+
 	</body>
 
 </html>

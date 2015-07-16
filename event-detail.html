@@ -3,7 +3,7 @@
 
 	<head>
 		<meta http-equiv="content-type" charset="utf-8">
-		<title>我的关注</title>
+		<title>详细资料</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="no">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -25,26 +25,42 @@
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a id="top-right" class=" mui-pull-right" ></a>
-			<a id="top-left" class="mui-action-back mui-icon mui-icon-back mui-pull-left"></a>
-			<h1 class="mui-title">我的关注</h1>
+			<div id="top-right" class=" mui-pull-right">发起</div>
+			<div id="top-left" class="mui-action-back mui-icon mui-icon-back mui-pull-left"></div>
+			<h1 class="mui-title">活动详情</h1>
 		</header>
-
-
 	</body>
 	<script src="js/mui.min.js"></script>
 	<script type="text/javascript" charset="utf-8">
+	var start = document.getElementById("top-right");
 		 //mui初始化
 		 mui.init({
     subpages:[{
-      url:'my-follow-subpage.html',
-      id:'my-follow-subpage',
+      url:'event-detail-subpage.html',
+      id:'event-detail-subpage',
       styles:{
         top:'45px',//mui标题栏默认高度为45px；
         bottom:'0px'//默认为0px，可不定义；
+      },
+      extras:{
       }
     }]
-  });
-	</script>
-
+  })
+		 start.addEventListener('touchstart',function(){
+		 	mui.openWindow({
+		 		url:"start-game.html",
+			id: "start-game",
+			styles: {
+			},
+			extras: {
+			},
+			crateNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+			show: {
+				autoShow: true, //页面loaded事件发生后自动显示，默认为true
+				aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；
+				duration:"50" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+			}
+		})
+		 })
+</script>
 </html>

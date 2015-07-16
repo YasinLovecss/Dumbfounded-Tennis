@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <style type="text/css">
+    	.oa-contact-content .userdetail{
+    		height: 15px;
+    	}
+    </style>
+</head>
+<body>
+	<div class="mui-content">
+			<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				<li class="mui-table-view-cell" id="chat">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="img/head2.jpg" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<span class="oa-contact-name">叶文洁</span>
+									<span class="oa-contact-position mui-h6">
+										<span>1分钟</span>前
+									</span>
+								</div>
+								<div class="userdetail">
+							    </div>
+								<p class="oa-contact-brief mui-h6">
+									本人初学，想找一帅哥高手带着一起练习网球
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			    <li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="img/head2.jpg" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<span class="oa-contact-name">叶文洁</span>
+									<span class="oa-contact-position mui-h6">
+										<span>1分钟</span>前
+									</span>
+								</div>
+								<div class="userdetail">
+							    </div>
+								<p class="oa-contact-brief mui-h6">
+									本人初学，想找一帅哥高手带着一起练习网球
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			    <li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="img/head2.jpg" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<span class="oa-contact-name">叶文洁</span>
+									<span class="oa-contact-position mui-h6">
+										<span>1分钟</span>前
+									</span>
+								</div>
+								<div class="userdetail">
+							    </div>
+								<p class="oa-contact-brief mui-h6">
+									本人初学，想找一帅哥高手带着一起练习网球
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			    <li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="img/head2.jpg" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<span class="oa-contact-name">叶文洁</span>
+									<span class="oa-contact-position mui-h6">
+										<span>1分钟</span>前
+									</span>
+								</div>
+								<div class="userdetail">
+							    </div>
+								<p class="oa-contact-brief mui-h6">
+									本人初学，想找一帅哥高手带着一起练习网球
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			
+			</ul>
+		</div>
+</body>
+<script type="text/javascript">
+	function chat() {
+		
+		var chatlist = document.getElementById("chat");
+		chatlist.addEventListener('tap',function () {
+			mui.openWindow({
+				url:'friend-chat.html',
+				id:'friend-chat',
+				creatNew:false,
+				show: 
+				{
+				autoShow: true, //页面loaded事件发生后自动显示，默认为true
+				aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；
+				duration:"50" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+			    }
+			})
+		})
+	}
+	chat();
+</script>
+</html>

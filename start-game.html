@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" charset="utf-8">
+		<title>详细资料</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.mui-input-row label {
+			height: 40px;
+		}
+		#name,
+		.btns {
+			background-color: #fff;
+		}
+		.mui-input-row .mui-btn{
+			float: inherit;
+			width: auto;
+			height: 30px;
+			margin-top: 5px;
+			padding: 0 15px;
+		}
+		.mui-btn:first-child{
+			border-color: #44BDED;
+			background-color: #44BDED;
+			color: #fff;
+		}
+	</style>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div id="top-right" class=" mui-pull-right">确认</div>
+			<div id="top-left" class="mui-action-back mui-icon mui-icon-back mui-pull-left"></div>
+			<h1 class="mui-title">发起球局</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-input-row">
+				<label>介绍</label>
+				<input  type="text" placeholder="点击输入">
+			</div>
+			<div class="mui-input-row">
+				<label>地点</label>
+				<input type="text" placeholder="点击输入地点">
+			</div>
+			<div class="mui-input-row">
+				<label class="info">时间</label>
+				<div id="pickDateBtn">
+					选择时间
+				</div>
+			</div>
+			<div class="mui-input-row">
+				<label >费用</label>
+				<div class="btns">
+				<button class="mui-btn">AA 制</button>
+				<button class="mui-btn">我请客</button>
+				<button class="mui-btn">其他</button>
+				</div>
+				
+			</div>
+		</div>
+
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		 //mui初始化
+		 mui.init()
+		 var pickDate = document.getElementById("pickDateBtn");
+		document.getElementById("pickDateBtn").addEventListener('tap', function() {
+				var dDate = new Date();
+				var minDate = new Date();
+				minDate.setFullYear(2015, 6, 1);
+				var maxDate = new Date();
+				maxDate.setFullYear(2020, 11, 31);
+				plus.nativeUI.pickDate(function(e) {
+					var d = e.date;
+					pickDate.innerText = d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
+				}, function(e) {
+					pickDate.innerText = "您没有选择日期";
+				}, {
+					title: "请选择日期",
+					date: dDate,
+					minDate: minDate,
+					maxDate: maxDate
+				});
+			})
+		var btn = document.getElementsByTagName("button");
+		btn[0].addEventListener('touchstart',function () {
+			btn[0].style.backgroundColor = '#44BDED';
+			btn[0].style.color= '#fff';
+			btn[0].style.borderColor= '#44BDED';
+			btn[1].style.backgroundColor = '#FFF';
+			btn[1].style.color= '#000';
+			btn[1].style.borderColor= 'rgb(204,204,204)';
+			btn[2].style.backgroundColor = '#FFF';
+			btn[2].style.color= '#000';
+			btn[2].style.borderColor= 'rgb(204,204,204)';
+		})
+		btn[1].addEventListener('touchstart',function () {
+			btn[1].style.backgroundColor = '#44BDED';
+			btn[1].style.color= '#fff';
+			btn[1].style.borderColor= '#44BDED';
+			btn[2].style.backgroundColor = '#FFF';
+			btn[2].style.color= '#000';
+			btn[2].style.borderColor= 'rgb(204,204,204)';
+			btn[0].style.backgroundColor = '#FFF';
+			btn[0].style.color= '#000';
+			btn[0].style.borderColor= 'rgb(204,204,204)';
+		})
+		btn[2].addEventListener('touchstart',function () {
+			btn[2].style.backgroundColor = '#44BDED';
+			btn[2].style.color= '#fff';
+			btn[2].style.borderColor= '#44BDED';
+			btn[1].style.backgroundColor = '#FFF';
+			btn[1].style.color= '#000';
+			btn[1].style.borderColor= 'rgb(204,204,204)';
+			btn[0].style.backgroundColor = '#FFF';
+			btn[0].style.color= '#000';
+			btn[0].style.borderColor= 'rgb(204,204,204)';
+		})
+
+	</script>
+</html>

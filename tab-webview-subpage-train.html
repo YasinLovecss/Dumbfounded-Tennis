@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<title>培训</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
 		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
 		<style>
 			html,body {
 				background-color: #efeff4;
@@ -18,138 +17,102 @@
 				color: #6d6d72;
 				font-size: 15px;
 			}
-			 .oa-contact-cell.mui-table .mui-table-cell {
-				padding: 11px 0;
-				vertical-align: middle;
+			span{
+				background-color: inherit;
+				color:#44BDED ;
 			}
-			
-			.oa-contact-cell {
-				position: relative;
-				margin: -11px 0;
+			.mui-bar{
+				padding-left: 0;
+				padding-right:0;
 			}
-	
-			.oa-contact-avatar {
-				width: 75px;
-			}
-			.oa-contact-avatar img {
-				border-radius: 50%;
-			}
-			.oa-contact-content {
-				width: 100%;
-			}
-			.oa-contact-name {
-				margin-right: 20px;
-			}
-			.oa-contact-name, oa-contact-position {
-				float: left;
+			#title{
+				z-index: 0;
 			}
 		</style>
 	</head>
-
 	<body>
-		<div class="mui-content">
-			<div class="title">
-				这是webview模式选项卡中的第3个子页面，该页面展示一个通讯录示例
+		<header class="mui-bar mui-bar-nav">
+			<a id="top-right" class="mui-pull-right" href="#"><span><img src="img/add.png"/></span></a>
+			<a id="top-left" class="mui-pull-left">筛选</a>
+			<h1 id="title" class="mui-title">培训</h1>
+			<div id="sift">
+				<div class="sift-content">
+					<span id="nearby">
+					我要学
+				    </span>
+				    <span id="time">
+					我能教
+				    </span>
+				</div>
 			</div>
-
-			<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
-				<li class="mui-table-view-cell">
-					<div class="mui-slider-cell">
-						<div class="oa-contact-cell mui-table">
-							<div class="oa-contact-avatar mui-table-cell">
-								<img src="../images/60x60.gif" />
-							</div>
-							<div class="oa-contact-content mui-table-cell">
-								<div class="mui-clearfix">
-									<h4 class="oa-contact-name">叶文洁</h4>
-									<span class="oa-contact-position mui-h6">董事长</span>
-								</div>
-								<p class="oa-contact-email mui-h6">
-									yewenjie@sina.com
-								</p>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="mui-table-view-cell">
-					<div class="mui-slider-cell">
-						<div class="oa-contact-cell mui-table">
-							<div class="oa-contact-avatar mui-table-cell">
-								<img src="../images/60x60.gif" />
-							</div>
-							<div class="oa-contact-content mui-table-cell">
-								<div class="mui-clearfix">
-									<h4 class="oa-contact-name">艾AA</h4>
-									<span class="oa-contact-position mui-h6">总经理</span>
-								</div>
-								<p class="oa-contact-email mui-h6">
-									aaa@163.com
-								</p>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="mui-table-view-cell">
-					<div class="mui-slider-cell">
-						<div class="oa-contact-cell mui-table">
-							<div class="oa-contact-avatar mui-table-cell">
-								<img src="../images/60x60.gif" />
-							</div>
-							<div class="oa-contact-content mui-table-cell">
-								<div class="mui-clearfix">
-									<h4 class="oa-contact-name">罗辑</h4>
-									<span class="oa-contact-position mui-h6">员工</span>
-								</div>
-								<p class="oa-contact-email mui-h6">
-									luoji@126.com
-								</p>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="mui-table-view-cell">
-					<div class="mui-slider-cell">
-						<div class="oa-contact-cell mui-table">
-							<div class="oa-contact-avatar mui-table-cell">
-								<img src="../images/60x60.gif" />
-							</div>
-							<div class="oa-contact-content mui-table-cell">
-								<div class="mui-clearfix">
-									<h4 class="oa-contact-name">云天明</h4>
-									<span class="oa-contact-position mui-h6">员工</span>
-								</div>
-								<p class="oa-contact-email mui-h6">
-									ytm@163.com
-								</p>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="mui-table-view-cell">
-					<div class="mui-slider-cell">
-						<div class="oa-contact-cell mui-table">
-							<div class="oa-contact-avatar mui-table-cell">
-								<img src="../images/60x60.gif" />
-							</div>
-							<div class="oa-contact-content mui-table-cell">
-								<div class="mui-clearfix">
-									<h4 class="oa-contact-name">史强</h4>
-									<span class="oa-contact-position mui-h6">员工</span>
-								</div>
-								<p class="oa-contact-email mui-h6">
-									shiqiang@gmail.com
-								</p>
-							</div>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
+		</header>
+		
 	</body>
 	<script src="js/mui.min.js"></script>
 	<script>
-		mui.init({
-			swipeBack:true //启用右滑关闭功能
-		});
+		 mui.init({
+    subpages:[{
+      url:'subpage-train.html',
+      id:'subpage-train',
+      styles:{
+        top:'90px',//mui标题栏默认高度为45px；
+        bottom:'0'//默认为0px，可不定义；
+      }
+    }]
+  });
+  function sift(){
+  	var nearby = document.getElementById("nearby");
+  	var time = document.getElementById("time");
+  	var datesift = document.getElementById("top-left");
+  	var adddate = document.getElementById("top-right");
+  	nearby.addEventListener('tap',function(){
+  		nearby.style.backgroundColor = '#0072A7';
+  		time.style.backgroundColor = '#44BDED';
+  	})
+  	time.addEventListener('tap',function() {
+  		time.style.backgroundColor = '#0072A7';
+  		nearby.style.backgroundColor = '#44BDED';
+  	})
+  	datesift.addEventListener('tap',function(){
+  		mui.openWindow({
+  			url:"train-sift.html",
+			id: "train-sift",
+			styles: {
+			},
+			extras: {
+			},
+			crateNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+			show: {
+				autoShow: true, //页面loaded事件发生后自动显示，默认为true
+				aniShow: "slide-in-left", //页面显示动画，默认为”slide-in-right“；
+				duration:"10"  //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+			}
+  		})
+  	})
+//	adddate.addEventListener('tap',function(){
+//		mui.openWindow({
+//			url:"event-detail.html",
+//			id: "event-detail",
+//			styles: {
+//			},
+//			extras: {
+//			},
+//			crateNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+//			show: {
+//				autoShow: true, //页面loaded事件发生后自动显示，默认为true
+//				aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；
+//				duration:"200"  //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+//			}
+//		})
+//	})
+mui('.mui-scroll-wrapper').scroll();
+			mui('body').on('shown', '.mui-popover', function(e) {
+				//console.log('shown', e.detail.id);//detail为当前popover元素
+			});
+			mui('body').on('hidden', '.mui-popover', function(e) {
+				//console.log('hidden', e.detail.id);//detail为当前popover元素
+			});
+  }
+  sift();
 	</script>
 </html>

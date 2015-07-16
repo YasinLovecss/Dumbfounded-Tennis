@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<style type="text/css">
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+	
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			.oa-contact-avatar img {
+				border-radius: 10px;
+				width: 60px;
+			}
+			.oa-contact-content {
+				width: 100%;
+			}
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			.oa-contact-name{
+				float: left;
+			}
+			.oa-contact-position{
+	            float: right;
+	            margin-right: 5%;
+            }
+            .oa-contact-brief{
+            	white-space: nowrap;
+            	overflow: hidden;
+            	text-overflow: ellipsis;
+            	max-width: 70%;
+            }
+            .mui-clearfix{
+            	margin-bottom: 10px;
+            }
+            .red{
+            	color: #D84C29;
+            }
+            .oa-contact-content img{
+            	width: 50px;
+            	margin-right: 3px;
+            	border-radius: 5px;
+            }
+            .mui-btn-block{
+            	width: 90%;
+            	margin:20px auto;
+            	height: 30px;
+            	line-height: 30px;
+            }
+            #imgContent{
+            	white-space: nowrap;
+            	overflow: hidden;
+            	text-overflow: clip;
+            	max-width: 70%;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+			<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell mui-navigate-right">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="img/head2.jpg" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<span class="oa-contact-name mui-h4">叶文洁</span>
+								</div>
+								<div class="userdetail">
+								<span id="sex-age">
+									♂ 27
+								</span>
+								<span id="tennis-age">
+									3个月
+								</span>
+								<span id="level">
+									1.0
+								</span>
+							    </div>
+								
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								时间：
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<span class="date">
+							    		3月20日
+							    	</span>
+							    	<span class="time">
+							    		10:00-12:00
+							    	</span>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell mui-navigate-right">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								球场：
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<span>奥体中心网球场</span>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								介绍：
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<span class="grey">让我们一起打网球吧</span>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-content  mui-table-cell">
+								已报名 <span class="red" id="num"></span> 人
+							</div>
+						</div>
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-content  mui-table-cell" id="imgContent">
+								<span id="first"><img src="img/head03.jpg"/></span>
+								<span><img src="img/head04.jpg"/></span>
+								<span><img src="img/head05.jpeg"/></span>
+								<span><img src="img/head03.jpg"/></span>
+								<span><img src="img/head04.jpg"/></span>
+								<span><img src="img/head05.jpeg"/></span>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="w10">
+				<button id="signup">报名</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	var signnum = document.getElementById("imgContent");
+	var len = signnum.getElementsByTagName("span").length;
+	var signnum = document.getElementById("num");
+	signnum.innerText = len;
+	    
+		signup.addEventListener('touchstart',function () {
+			var signup = document.getElementById("signup");
+		    var signstate = signup.innerText;
+		    var num = document.getElementById("num");
+		    var joinnum = parseInt(num.innerText);
+		    var target = document.getElementById("imgContent");
+		    var first = document.getElementById("first");
+		    var span = document.createElement('span');
+		   span.innerHTML = "<img src='img/head2.jpg' />"
+			if (signstate === "报名") {
+				signup.innerText= "已报名";
+				signup.style.backgroundColor = "#A5ACA5";
+			    signup.style.borderColor = "#A5ACA5";
+			     joinnum++;
+			     num.innerText = joinnum;
+			     target.insertBefore(span,target.firstChild);
+			}else{
+				signup.innerText = "报名";
+				signup.style.backgroundColor = "#60CF5F";
+				signup.style.borderColor = "#60CF5F";
+				 joinnum--;
+				  num.innerText = joinnum;
+				 target.removeChild(target.firstChild);
+			}
+		})
+	</script>
+
+</html>
