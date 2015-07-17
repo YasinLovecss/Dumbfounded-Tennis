@@ -67,8 +67,8 @@
 					type: 'post',
 					timeout: 10000,
 					success: function(data) {
-						if (data.state == "false") {
-							mui.toast("用户名或密码失败。");
+						if (data.state == "0") {
+							mui.toast("用户名或密码错误");
 							return false;
 						} else {
 							//							localStorage.tempClass = data.classId;
@@ -137,7 +137,8 @@
 							duration: "200" //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
 						}
 					})
-                })			
+               
+                })
 			}
 			
 			location();
