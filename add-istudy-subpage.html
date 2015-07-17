@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+		<title>添加我要学</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<style type="text/css">
+			.mui-content{
+				margin-top: 10px;
+			}
+			.mui-slider-cell{
+				background-color: #fff;
+			}
+			.mui-content>.mui-table-view:first-child{
+				margin-top: 0px;
+			}
+			.mui-input-row{
+				margin-top: 5px;
+			}
+			#textarea{
+				margin-top: 5px;
+				border: 0px;
+			}
+		</style>
+	</head>
+<body>
+	<div class="mui-content">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell" id="way">
+					<a class="mui-navigate-right">
+						授课方式
+						<span class="mui-badge" id="way_sift">不限</span>
+					</a>
+				</li>
+				<div class="sift_list way_sift">
+					<ul class="mui-table-view" id="way_list">
+						<li class="mui-table-view-cell">
+							不限
+						</li>
+						<li class="mui-table-view-cell">
+							私教
+						</li>
+						<li class="mui-table-view-cell">
+							团教
+						</li>
+						<li class="mui-table-view-cell">
+							私+团
+						</li>
+					</ul>
+				</div>
+				<li class="mui-table-view-cell" id="type">
+					<a class="mui-navigate-right">
+						培训类型
+						<span class="mui-badge" id="type_sift">不限</span>
+					</a>
+				</li>
+				<div class="sift_list type_sift">
+					<ul class="mui-table-view" id="type_list">
+						<li class="mui-table-view-cell">
+							不限
+						</li>
+						<li class="mui-table-view-cell">
+							主动定制
+						</li>
+						<li class="mui-table-view-cell">
+							被动受教
+						</li>
+					</ul>
+				</div>
+			<textarea id="textarea" rows="3" placeholder="点击输入培训需求描述"></textarea>
+			</ul>
+	</div>	
+</body>
+<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+							// 培训类型筛选
+				$('#type').click(function(){
+					$('.type_sift').slideToggle(100);
+				});
+				$('#type_list').children().click(function() {
+					var tex = $(this).text();
+					$('#type_sift').text(tex);
+					$('.type_sift').slideUp(100);
+				})
+				// 授课方式筛选
+				$('#way').click(function(){
+					$('.way_sift').slideToggle(100);
+				});
+				$('#way_list').children().click(function() {
+					var tex = $(this).text();
+					$('#way_sift').text(tex);
+					$('.way_sift').slideUp(100);
+				})
+		})
+	</script>
+</html>

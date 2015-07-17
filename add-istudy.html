@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+		<title>添加我要学</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<script src="js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+			<a id="top-right" class=" mui-pull-right" >确定</a>
+			<div id="top-left" class="mui-action-back mui-icon mui-icon-back mui-pull-left"></div>
+			<h1 class="mui-title">我要学</h1>
+	</header>
+</body>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		 //mui初始化
+		 
+		 mui.init({
+ preloadPages:[{
+   id:'add-istudy-subpage',
+   url:'add-istudy-subpage.html'          
+ }
+ ]
+});
+		 mui.init({
+    subpages:[{
+      url:'add-istudy-subpage.html',
+      id:'add-istudy-subpage',
+      styles:{
+        top:'45px',//mui标题栏默认高度为45px；
+        bottom:'0px'//默认为0px，可不定义；
+      },
+      extras:{
+      }
+    }]
+  })
+		 var detailPage = null;
+//添加列表项的点击事件
+mui('header').on('tap', '#top-right', function(e) {
+ var id = 1;
+ //获得详情页面
+ if(!detailPage){
+   detailPage = plus.webview.getWebviewById('add-istudy-subpage');
+ }
+ //触发详情页面的newsId事件
+ mui.fire(detailPage,'newsId',{
+   id:id
+ });
+//打开详情页面          
+  mui.init({
+    subpages:[{
+      url:'add-istudy-subpage.html',
+      id:'add-istudy-subpage',
+    }]
+  })
+});
+</script>
+</html>
