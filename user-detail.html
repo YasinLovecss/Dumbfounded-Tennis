@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" charset="utf-8">
+		<title>人物详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<div id="top-right" class=" mui-pull-right">聊天</div>
+			<div id="top-left" class="mui-action-back mui-icon mui-icon-back mui-pull-left"></div>
+			<h1 class="mui-title">张三</h1>
+		</header>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		 //mui初始化
+		 
+		 mui.init({
+ preloadPages:[{
+   id:'user-detail-subpage',
+   url:'user-detail-subpage.html'          
+ }
+ ]
+});
+		 mui.init({
+    subpages:[{
+      url:'user-detail-subpage.html',
+      id:'user-detail-subpage',
+      styles:{
+        top:'45px',//mui标题栏默认高度为45px；
+        bottom:'0px'//默认为0px，可不定义；
+      },
+      extras:{
+      }
+    }]
+  })
+</script>
+</html>

@@ -69,8 +69,11 @@
             #imgContent{
             	white-space: nowrap;
             	overflow: hidden;
-            	text-overflow: clip;
-            	max-width: 70%;
+            	max-width: 60%;
+            }
+            .icon_fr img{ 
+            	width: 20px;
+            	margin-left: 5px;
             }
 		</style>
 	</head>
@@ -88,17 +91,16 @@
 									<span class="oa-contact-name mui-h4">叶文洁</span>
 								</div>
 								<div class="userdetail">
-								<span id="sex-age">
+								<span id="sex_age">
 									♂ 27
 								</span>
-								<span id="tennis-age">
+								<span id="tennis_age">
 									3个月
 								</span>
 								<span id="level">
 									1.0
 								</span>
 							    </div>
-								
 							</div>
 						</div>
 					</div>
@@ -106,8 +108,8 @@
 				<li class="mui-table-view-cell">
 					<div class="mui-slider-cell">
 						<div class="oa-contact-cell mui-table">
-							<div class="oa-contact-avatar mui-table-cell">
-								时间：
+							<div class="oa-contact-avatar mui-table-cell icon_fr">
+								<img src="img/time.png"/>
 							</div>
 							<div class="oa-contact-content mui-table-cell">
 								<span class="date">
@@ -121,10 +123,10 @@
 					</div>
 				</li>
 				<li class="mui-table-view-cell">
-					<div class="mui-slider-cell mui-navigate-right">
+					<div class="mui-slider-cell">
 						<div class="oa-contact-cell mui-table">
-							<div class="oa-contact-avatar mui-table-cell">
-								球场：
+							<div class="oa-contact-avatar mui-table-cell icon_fr">
+								<img src="img/location.png"/>
 							</div>
 							<div class="oa-contact-content mui-table-cell">
 								<span>奥体中心网球场</span>
@@ -135,8 +137,8 @@
 				<li class="mui-table-view-cell">
 					<div class="mui-slider-cell">
 						<div class="oa-contact-cell mui-table">
-							<div class="oa-contact-avatar mui-table-cell">
-								介绍：
+							<div class="oa-contact-avatar mui-table-cell icon_fr">
+							     <img src="img/join.png"/>
 							</div>
 							<div class="oa-contact-content mui-table-cell">
 								<span class="grey">让我们一起打网球吧</span>
@@ -174,7 +176,6 @@
 	var len = signnum.getElementsByTagName("span").length;
 	var signnum = document.getElementById("num");
 	signnum.innerText = len;
-	    
 		signup.addEventListener('touchstart',function () {
 			var signup = document.getElementById("signup");
 		    var signstate = signup.innerText;
